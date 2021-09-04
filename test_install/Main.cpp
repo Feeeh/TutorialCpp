@@ -70,6 +70,38 @@ int main()
 	bool isRaining2 = false;
 	bool isWarm2 = true;
 
+	//SECTION 2 - VIDEO 10 (Symbolic Constants and Naming Conventions)
+	/*
+		const have DIFFERENT naming convention = CAPITALIZED_SNAKE_CASE
+		variables use camelCase
+	*/
+	const double MY_PI = 3.14159;
+	const string MY_NAME = "Felipe";
+	//MY_NAME = "Poggers"; - ERROR bc const can't be changed
+
+	//SECTION 2 - VIDEO 11 (User Input)
+	int userAge;
+	string userName;
+
+	//SECTION 2 - VIDEO 11 (User Input) - CHALLENGE (LINE 201)
+	/*
+		-> fullName string variable
+		-> location string variable
+		-> initialScore int variable
+
+		-> ask user for full name, stored in fullName
+		-> ask user for city, state, and country, stored in location
+		-> ask user for an int 0 to 100, stored in initialScore
+
+		-> print 
+			- "Hello, " + fullName
+			- "We heard you are from " + location
+			- "Your original score is " + inicialScore + " but with five points added is " + (initialScore + 5);
+	*/
+	string fullName;
+	string location;
+	int initialScore;
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	//SECTION 2 - VIDEO 2 (Saying Hello to C++)
@@ -142,6 +174,44 @@ int main()
 	cout << "AND: " << (isRaining2 && isWarm2) << endl;
 	cout << "OR: " << (isRaining2 || isWarm2) << endl;
 	cout << "NOT: " << (!isRaining2) << endl;
+
+	//BREAK
+	cout << "" << endl;
+	cout << "" << endl;
+
+	//SECTION 2 - VIDEO 10 (Symbolic Constants and Naming Conventions)
+	cout << MY_NAME << endl;
+
+	//BREAK
+	cout << "" << endl;
+	cout << "" << endl;
+
+	//SECTION 2 - VIDEO 11 (User Input)
+	cout << "Enter your name" << endl;
+	getline(cin, userName);
+
+	cout << "Enter your age" << endl;
+	cin >> userAge;
+
+	cout << "" << endl;
+
+	cout << userName << endl;
+	cout << userAge << endl;
+
+	//SECTION 2 - VIDEO 11 (User Input) - CHALLENGE (LINE 86)
+	cout << "Write a number between 0 and 100." << endl;
+	cin >> initialScore;
+	cin.get(); //CONSUME THE WEAK. lol
+	cout << "What\'s your name?" << endl;
+	getline(cin, fullName);
+	cout << "What\'s your city, state and country? (Separated by spaces)" << endl;
+	getline(cin, location);
+
+	cout << "" << endl;
+	cout << "Hello " << fullName << endl;
+	cout << "We heard you are from " << location << endl;
+	cout << "Your original score is " << initialScore << endl;
+	cout << "But with five points added, your score is " << (initialScore + 5) << endl;
 
 	return 0;
 }
