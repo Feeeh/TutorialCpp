@@ -24,6 +24,21 @@ int main()
 	int age3;
 	char gender;
 
+	//SECTION 3 - VIDEO 4 (Repetition Control Statements)
+	int count = 0;
+	int count2 = 10;
+	int input;
+
+	//SECTION 3 - VIDEO 4 (Repetition Control Statements) - CHALLENGE
+	/*
+		SumFun
+			-> Ask user for input
+			-> Add this input in a sum
+			-> Repeat until user types any negative number
+	*/
+	int input2;
+	int sum = 0;
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	//SECTION 3 - VIDEO 2 (Introductions to Control Statements)
@@ -44,8 +59,7 @@ int main()
 	}
 
 	//BREAK
-	cout << "" << endl;
-	cout << "" << endl;
+	cout << endl << endl;
 
 	//SECTION 3 - VIDEO 3 (Selection Control Statements)
 	cout << "Welcome to the Pub and Grille" << endl;
@@ -65,7 +79,7 @@ int main()
 
 	cout << "Thanks for coming to the Pub and Grille!" << endl;
 
-	cout << "" << endl;
+	cout << endl;
 
 	cout << "Please enter a letter grade" << endl;
 	cin >> grade;
@@ -95,7 +109,7 @@ int main()
 		default:
 			cout << "You've entered an invalid grade. Try again!" << endl;
 	}
-	cout << "" << endl;
+	cout << endl;
 
 	//SECTION 3 - VIDEO 3 (Selection Control Statements) - CHALLENGE
 	cout << "What is your age?" << endl;
@@ -112,5 +126,59 @@ int main()
 		cout << "You do not qualify for the discount!" << endl;
 	}
 
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 3 - VIDEO 4 (Repetition Control Statements)
+	//while -- Doesn't run if the conditions are not checked
+	while (count < 10)
+	{
+		cout << count << endl;
+		count++;
+	}
+
+	cout << endl;
+
+	//do-while -- Run at least once, then check for conditions
+	do
+	{
+		cout << count2 << endl;
+		count2++;
+	} while (count2 < 10);
+
+	cout << endl;
+
+	//for
+	for (int i = 0; i < 10; i++)
+	{
+		cout << i << endl;
+	}
+
+	//Priming read -- First time for user to read
+	cout << "Please, enter a non-negative integer to continue or negative if you want to quit" << endl;
+	cin >> input;
+
+	while (input >= 0)
+	{
+		cout << input << endl;
+
+		cout << "Please, enter a non-negative integer to continue or negative if you want to quit" << endl;
+		cin >> input;
+	}
+
+	//SECTION 3 - VIDEO 4 (Repetition Control Statements) - CHALLENGE
+	cout << "Enter a non-negative integer to add to a sum. Enter a negative number to quit." << endl;
+	cin >> input2;
+
+	while (input2 >= 0)
+	{
+		sum += input2;
+
+		cout << "Enter a non-negative integer to add to a sum. Enter a negative number to quit." << endl;
+		cin >> input2;
+	}
+	cout << "Final SUM: " << sum << endl;
+
+
 	return 0;
-}
+} 
