@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -38,6 +40,28 @@ int main()
 	*/
 	int input2;
 	int sum = 0;
+
+	//SECTION 3 - VIDEO 5 (Break and Continue)
+	int count3 = 0;
+
+	//SECTION 3 - VIDEO 5 (Break and Continue) - CHALLENGE
+	/*
+		Short Challenge or something
+			-> Use continue statement and print even integers 0 to 10.
+			-> Hint: Any operators that help if an integer is divisible by 2
+	*/
+	int count4 = 0;
+
+	//SECTION 3 - VIDEO 6 (Random Numbers - Side Topic)
+
+
+	//SECTION 3 - VIDEO 6 (Random Numbers - Side Topic) - CHALLENGE
+	/*
+		Generating Dices!
+			-> Generate a single die (6 sides) roll
+			-> Generate 10 dices rolls and print each
+	*/
+	int val3;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -178,7 +202,67 @@ int main()
 		cin >> input2;
 	}
 	cout << "Final SUM: " << sum << endl;
+	
+	//BREAK
+	cout << endl << endl;
 
+	//SECTION 3 - VIDEO 5 (Break and Continue)
+	while (count3 < 10)
+	{
+		if (count3 == 5)
+		{
+			count3++;
+			continue;	//continue goes back to the start? It doesn't execute what's below it?
+						//-> The continue statement breaks one iteration(in the loop), if a specified condition occurs, 
+						//-> and continues with the next iteration in the loop.
+		}
+		cout << count3 << endl;
+		count3++;
+	}
+	
+	for (int i = 0; i < 10; i++)
+	{
+		if (i == 5)
+		{
+			break;		//break the loop and gets out of it.
+						//-> Used to "jump out" of a switch statement.
+						//-> The break statement can also be used to jump out of a loop.
+		}
+		cout << i << endl;
+	}
+
+	//SECTION 3 - VIDEO 5 (Break and Continue) - CHALLENGE
+	for (int i = 0; i <= 10; i++)
+	{
+		if (i % 2 != 0)
+		{
+			continue;
+		}
+		cout << i << endl;
+	}
+
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 3 - VIDEO 6 (Random Numbers - Side Topic)
+	srand(time(nullptr));
+
+	int val1 = rand() % 10;		//val1 will be >= 0 and < 10
+
+	//shift it
+	int val2 = rand() % 10 + 1;	//val2 will be >= 1 and <= 10
+
+	cout << val1 << endl;
+	cout << val2 << endl;
+
+	//SECTION 3 - VIDEO 6 (Random Numbers - Side Topic) - CHALLENGE
+	//srand(time(nullptr)); //For the challenge
+
+	for (int i = 0; i < 10; i++)
+	{
+		val3 = rand() % 6 + 1;
+		cout << val3 << endl;
+	}
 
 	return 0;
-} 
+}
