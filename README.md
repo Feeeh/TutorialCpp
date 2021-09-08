@@ -1,7 +1,7 @@
 # The Complete C++ Developer Course
 https://www.udemy.com/course/the-complete-cpp-developer-course/
 
-Leaning C++ with Unity.
+Leaning C++ with Udemy.
 
 
 test_install = Section02
