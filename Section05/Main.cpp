@@ -37,6 +37,25 @@ int AddThese(int num1, int num2);
 */
 int Square(int number);
 
+//SECTION 5 - VIDEO 4 (Parameter Passing: Pass-by-Value and Pass-by-Reference)
+void ValueChanged1(int someNum);	//Without &, it passes the value, so if the variable passed is changed, it's only inside the function
+void ValueChanged2(int& someNum);	//With &, it passes the reference, so the variable passed is changed everywhere
+
+//SECTION 5 - VIDEO 4 (Parameter Passing: Pass-by-Value and Pass-by-Reference) - CHALLENGE
+/*
+	ThreeTimesN
+		-> Function with:
+			- void Function
+			- Takes 2 parameters
+		-> The parameters:
+			- input, integer passed by value
+			- output,  integer passed by reference
+		-> Store the input multiplied by 3 into the output variable
+
+		++ Again, asked for user input when not needed. Ossada.
+*/
+void ThreeTimesN(int input, int& output);
+
 int main()
 {
 	//SECTION 5 - VIDEO 2 (Function Prototypes and Definitions)
@@ -81,6 +100,31 @@ int main()
 	//BREAK
 	cout << endl << endl;
 
+	//SECTION 5 - VIDEO 4 (Parameter Passing: Pass-by-Value and Pass-by-Reference)
+	int myNumber = 20;
+
+	cout << "Before ValueChanged1 call, myNumber is: " << myNumber << endl;
+	ValueChanged1(myNumber);
+	cout << "After ValueChanged1 call, myNumber is: " << myNumber << endl;
+
+	//SMOL BREAK
+	cout << endl;
+
+	cout << "myNumber is currently: " << myNumber << endl;
+	ValueChanged2(myNumber);
+	cout << "After ValueChanged2 call, myNumber is: " << myNumber << endl;
+
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 5 - VIDEO 4 (Parameter Passing: Pass-by-Value and Pass-by-Reference) - CHALLENGE
+	int input;
+	int output = 0;
+	cout << "Output is: " << output << endl;
+	cout << "Write an input and makes it triple!" << endl;
+	cin >> input;
+	ThreeTimesN(input, output);
+	cout << "Output now is: " << output << endl;
 
 
 	return 0;
@@ -123,4 +167,22 @@ int AddThese(int num1, int num2)
 int Square(int number)
 {
 	return number * number;
+}
+
+//SECTION 5 - VIDEO 4 (Parameter Passing: Pass-by-Value and Pass-by-Reference)
+void ValueChanged1(int someNum)
+{
+	someNum = 100;
+}
+
+void ValueChanged2(int& someNum)
+{
+	someNum = 100;
+	cout << "Inside ValueChanged2 function, someNum is: " << someNum << endl;
+}
+
+//SECTION 5 - VIDEO 4 (Parameter Passing: Pass-by-Value and Pass-by-Reference) - CHALLENGE
+void ThreeTimesN(int input, int& output)
+{
+	output = input * 3;
 }
