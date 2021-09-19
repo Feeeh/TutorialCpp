@@ -56,6 +56,24 @@ void ValueChanged2(int& someNum);	//With &, it passes the reference, so the vari
 */
 void ThreeTimesN(int input, int& output);
 
+//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime)
+void SomeFunction(int aParam);
+double myGlobalDouble = 3.14159;
+
+//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime) -- CHALLENGE
+/*
+	ScopeChallenge
+		-> Create a function called ModifyGlobal
+			- void and parameterless
+		-> Create a global variable called counter and initialize it to 0
+		-> Inside ModifyGlobal, increment counter by 1
+		-> Inside main, call ModifyGlobal inside a for loop
+			- Iterate 100 times
+		-> Print out the value of counter before and after the for loop
+*/
+void ModifyGlobal();
+int counter = 0;
+
 int main()
 {
 	//SECTION 5 - VIDEO 2 (Function Prototypes and Definitions)
@@ -126,6 +144,26 @@ int main()
 	ThreeTimesN(input, output);
 	cout << "Output now is: " << output << endl;
 
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime)
+	int localToMain = 20;
+	cout << "The localToMain variable is: " << localToMain << endl;
+	cout << "The myGlobalDouble (in main) is: " << myGlobalDouble << endl;
+
+	SomeFunction(25);
+	SomeFunction(28);
+	SomeFunction(32);
+
+	//BREAK
+	cout << endl << endl;
+
+	cout << counter << endl;
+	for (int i = 0; i < 100; i++) {
+		ModifyGlobal();
+	}
+	cout << counter << endl;
 
 	return 0;
 }
@@ -185,4 +223,24 @@ void ValueChanged2(int& someNum)
 void ThreeTimesN(int input, int& output)
 {
 	output = input * 3;
+}
+
+//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime)
+void SomeFunction(int aParam)
+{
+	int myLocalNum = 100;
+	static int myStatic = 500;	//static means that the variable will be "alive" for the entire runtime -- NEED TO DECLARE TO BEHAVE LIKE A STATIC!
+	myLocalNum++;
+	myStatic++;
+	myGlobalDouble++;
+
+	cout << "myLocalNum is: " << myLocalNum << endl;
+	cout << "The aParam is: " << aParam << endl;
+	cout << "myGlobalDouble (in SomeFuncion) is: " << myGlobalDouble << endl;
+	cout << "myStatic value is: " << myStatic << endl;
+}
+
+void ModifyGlobal()
+{
+	counter++;
 }
