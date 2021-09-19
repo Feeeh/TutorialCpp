@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -73,6 +74,21 @@ double myGlobalDouble = 3.14159;
 */
 void ModifyGlobal();
 int counter = 0;
+
+//SECTION 5 - VIDEO 6 (Function Overloading)
+//Function overloading creates multiple functions with the same name, but with different signatures
+int GetResult(int num1, int num2);
+string GetResult(string str1, string str2);
+
+//SECTION 5 - VIDEO 6 (Function Overloading) -- CHALLENGE
+/*
+	Add a function to GetResult
+		-> Add an overload of the GetResult function
+			- Take a single integer parameter
+			- Return the cube (n^3) of the parameter
+		-> Call it in main
+*/
+int GetResult(int num1);
 
 int main()
 {
@@ -165,6 +181,50 @@ int main()
 	}
 	cout << counter << endl;
 
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 5 - VIDEO 6 (Function Overloading)
+	int resultNum = GetResult(30, 20);
+	string resultName = GetResult("Felipe", "Brandao");
+
+	cout << "resultNum is: " << resultNum << endl;
+	cout << "resultName is: " << resultName << endl;
+
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 5 - VIDEO 6 (Function Overloading) - CHALLENGE
+	int challengeNum = GetResult(3);
+	cout << "challengeNum is: " << challengeNum << endl;
+
+	//SECTION 5 - VIDEO 7 (The <cmath> Library)
+	//DON'T FORGET TO #include <cmath>
+	int powResult = pow(2, 3);		//pow1^pow2 = result;
+	int sqrtResult = sqrt(25);		//x*x = sqrtValue;
+	int ceilResult = ceil(4.2);		//up the nearest integer
+	int floorResult = floor(4.2);	//down the nearest integer
+
+	cout << "2^3 is: " << powResult << endl;
+	cout << "Sqrt of 25 is: " << sqrtResult << endl;
+	cout << "Ceiling of 4.2 is: " << ceilResult << endl;
+	cout << "Floor of 4.2 is: " << floorResult << endl;
+
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 5 - VIDEO 7 (The <cmath> Library) - CHALLENGE
+	/*
+		Use log2 function!
+			-> Use the log2 function to find the binary logarithm of 512, and print that result to the console
+			-> Logarithms answer the question, "To what power..."
+				- In our case, "To what power would you take 2 in order to get 512 as the answer?"
+			-> Print out the result
+	*/
+	int log2Result = log2(512);
+	cout << "To what power would you take 2 in order to get 512 as the answer?" << endl;
+	cout << "The answer is: " << log2Result << endl;
+
 	return 0;
 }
 
@@ -240,7 +300,27 @@ void SomeFunction(int aParam)
 	cout << "myStatic value is: " << myStatic << endl;
 }
 
+//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime) - CHALLENGE
 void ModifyGlobal()
 {
 	counter++;
 }
+
+//SECTION 5 - VIDEO 6 (Function Overloading)
+int GetResult(int num1, int num2)
+{
+	return num1 * num2;
+}
+
+string GetResult(string str1, string str2)
+{
+	return str1 + " " + str2;
+}
+
+//SECTION 5 - VIDEO 6 (Function Overloading) - CHALLENGE
+int GetResult(int num1)
+{
+	return num1 * num1 * num1;
+}
+
+//SECTION 5 - VIDEO 7 (The <cmath> Library)
