@@ -61,7 +61,7 @@ void ThreeTimesN(int input, int& output);
 void SomeFunction(int aParam);
 double myGlobalDouble = 3.14159;
 
-//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime) -- CHALLENGE
+//SECTION 5 - VIDEO 5 (Variable Scope and Lifetime) - CHALLENGE
 /*
 	ScopeChallenge
 		-> Create a function called ModifyGlobal
@@ -80,7 +80,7 @@ int counter = 0;
 int GetResult(int num1, int num2);
 string GetResult(string str1, string str2);
 
-//SECTION 5 - VIDEO 6 (Function Overloading) -- CHALLENGE
+//SECTION 5 - VIDEO 6 (Function Overloading) - CHALLENGE
 /*
 	Add a function to GetResult
 		-> Add an overload of the GetResult function
@@ -89,6 +89,21 @@ string GetResult(string str1, string str2);
 		-> Call it in main
 */
 int GetResult(int num1);
+
+//SECTION 5 - VIDEO 8 (Recursion)
+void CountDownFrom(int num);
+int SumValues(int num);
+
+//SECTION 5 - VIDEO 8 (Recursion) - CHALLENGE
+/*
+	FactorialFun Challenge
+		-> Create a function called Factorial
+		-> Matematical definition of factorial is	n! = n * (n-1)! for n > 1
+													1				for n == 1
+		-> An iterative approach to the solution would look like:
+			- 5! = 5 * 4 * 3 * 2 * 1 = 120
+*/
+int Factorial(int num);
 
 int main()
 {
@@ -225,6 +240,21 @@ int main()
 	cout << "To what power would you take 2 in order to get 512 as the answer?" << endl;
 	cout << "The answer is: " << log2Result << endl;
 
+	//BREAK
+	cout << endl << endl;
+
+	//SECTION 5 - VIDEO 8 (Recursion)
+	CountDownFrom(10);
+
+	int totalSum = SumValues(10);
+	cout << "The sum is: " << totalSum << endl;
+
+	//BREAK
+	cout << endl << endl;
+
+	int factorialOfSix = Factorial(6);
+	cout << "Factorial of 6 is: " << factorialOfSix << endl;
+
 	return 0;
 }
 
@@ -323,4 +353,29 @@ int GetResult(int num1)
 	return num1 * num1 * num1;
 }
 
-//SECTION 5 - VIDEO 7 (The <cmath> Library)
+//SECTION 5 - VIDEO 8 (Recursion)
+void CountDownFrom(int num)
+{
+	if (num >= 0) {
+		cout << num << endl;
+		CountDownFrom(num - 1);
+	}
+}
+
+int SumValues(int num)
+{
+	if (num >= 1) {
+		return num + SumValues(num - 1);
+	}
+
+	return num;
+}
+
+int Factorial(int num)
+{
+	if (num > 1) {
+		num = num * Factorial(num - 1);
+	}
+
+	return num;
+}
