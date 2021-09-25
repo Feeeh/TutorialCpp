@@ -18,6 +18,9 @@ int main()
 {
 	House myHouse;
 	House yourHouse;
+	House theirHouse = House(3, 10, "orange");
+
+	myHouse.print();
 
 	myHouse.setNumStories(2);
 	myHouse.setNumWindows(6);
@@ -27,11 +30,19 @@ int main()
 	yourHouse.setNumWindows(10);
 	yourHouse.setColor("blue");
 
+	cout << endl << endl;
+
 	myHouse.print();
 
 	cout << endl << endl;
 
 	yourHouse.print();
+
+	cout << endl << endl;
+
+	theirHouse.print();
+
+	cout << endl << endl;
 
 	return 0;
 }
